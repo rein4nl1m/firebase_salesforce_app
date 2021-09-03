@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "185094921457",
+    "project_id": "fir-salesforce-20d49",
+    "storage_bucket": "fir-salesforce-20d49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185094921457:android:bdfdd29b5dcddd49565d50",
+        "android_client_info": {
+          "package_name": "com.example.firebase_salesforce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185094921457-snn0qv08pcmt7ag2qumvbfjmjggrbnjk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjFOaRbVGqqHoN9Wa_6Z4J8jF9L-7W7c8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185094921457-snn0qv08pcmt7ag2qumvbfjmjggrbnjk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
