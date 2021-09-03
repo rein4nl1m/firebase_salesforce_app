@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_salesforce_app/core/di/injectable.dart';
 import 'package:firebase_salesforce_app/core/notifications/app_notifications.dart';
+import 'package:firebase_salesforce_app/core/routes/auth_guard.dart';
 import 'package:firebase_salesforce_app/core/routes/router.gr.dart';
 import 'package:firebase_salesforce_app/presentation/pages/auth/login/controller/login_controller.dart';
 import 'package:firebase_salesforce_app/presentation/widgets/padding_text_form_field.dart';
@@ -10,7 +11,9 @@ import '../../../utils/responsive_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final void Function(bool isLoggedIn)? onLoginResult;
+
+  const LoginPage({Key? key, this.onLoginResult}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -94,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     const Text('Esqueceu a senha?'),
                     TextButton(
-                      onPressed: () => AppRouter(),
+                      onPressed: () => AppRouter(authGuard: AuthGuard()),
                       child: const Text('Resetar'),
                     )
                   ],
@@ -126,6 +129,8 @@ class _LoginPageState extends State<LoginPage> {
           email: _emailController.text,
           password: _passwordController.text,
         );
+
+        widget.onLoginResult?.call(true);
         context.router.replace(const HomePageRoute());
       }
     } catch (e) {

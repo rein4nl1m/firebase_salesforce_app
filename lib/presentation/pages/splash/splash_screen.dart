@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _homeNavigation() {
-    context.router.replace(const LoginPageRoute());
+    context.router.replace(LoginPageRoute());
   }
 
   @override

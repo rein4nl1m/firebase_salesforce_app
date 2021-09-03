@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
   _sair(BuildContext context) async {
     try {
       await _loginController.loggout();
-      context.router.replace(const LoginPageRoute());
+      context.router.replace(LoginPageRoute(onLoginResult: (_) => false));
     } catch (e) {
       AppNotifications.showToastError(
         'Erro ao realizar logoff: ${e.toString()}',
